@@ -1,0 +1,43 @@
+import React from 'react';
+
+const KwesiLogo = ({ className }) => (
+  <svg 
+    viewBox="0 0 500 500" 
+    className={className} 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <filter id="neural-glow" x="-100%" y="-100%" width="300%" height="300%">
+        <feGaussianBlur stdDeviation="15" result="blur"/>
+        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+      </filter>
+    </defs>
+
+    {/* The 'K' structure - using a slightly lighter grey for visibility on black */}
+    <g fill="#fff">
+      <rect x="160" y="100" width="30" height="300" rx="2"/>
+      <path d="M205 250 L320 120 H360 L245 250 Z" />
+    </g>
+
+    {/* The Cyan Neural Pixel */}
+    <rect 
+      x="290" 
+      y="300" 
+      width="45" 
+      height="45" 
+      fill="#00E5FF" 
+      filter="url(#neural-glow)" 
+      rx="4"
+    >
+      <animate 
+        attributeName="opacity" 
+        values="1;0.4;1" 
+        dur="4s" 
+        repeatCount="indefinite" 
+      />
+    </rect>
+  </svg>
+);
+
+export default KwesiLogo;
