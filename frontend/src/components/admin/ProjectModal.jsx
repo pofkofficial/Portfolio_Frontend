@@ -23,7 +23,7 @@ export default function ProjectModal({ isOpen, onClose, refreshData, editData })
   const techStack = [
     "python", "flask", "django", "react", "node.js", 
     "mongodb", "postgre", "tailwind", "javascript", 
-    "excel", "tableau", "figma", "google sheet", "html", "css"
+    "excel", "tableau", "figma", "google sheet", "html", "css", "git/github",
   ];
 
   // Close dropdown when clicking outside
