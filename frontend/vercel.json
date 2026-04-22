@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://portfolio-backend-delta-dusky.vercel.app/api/$1"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
