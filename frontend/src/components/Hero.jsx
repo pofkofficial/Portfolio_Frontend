@@ -13,7 +13,7 @@ export default function Hero() {
         // We use the shorthand because api.js already has the base URL
         await api.post('/api/track_visit');
         const res = await api.get('/api/visit_stats');
-        setVisitCount(res.data.total_visits);
+        setVisitCount(res.data.total_visitors);
       } catch (err) {
         console.error("Neural Link Offline:", err);
         setVisitCount('OFFLINE');
@@ -36,15 +36,16 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* Top Right: Visit Counter - Hidden on very small screens or reflowed */}
+      {/* Top Right: Visitor Counter */}
       <div className="absolute top-6 right-6 md:top-10 md:right-10 flex flex-col items-end">
         <div className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-white/[0.03] border border-white/10 rounded-full backdrop-blur-sm">
           <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></div>
-          <span className="font-mono text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest">Nodes Active:</span>
+          {/* Label updated to reflect unique users */}
+          <span className="font-mono text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest">Unique_Nodes:</span>
           <span className="font-mono text-xs text-white font-bold">{visitCount}</span>
           <RiUserSharedLine className="text-cyan-500/50 hidden md:block" size={14} />
         </div>
-        <p className="text-[8px] font-mono text-gray-600 mt-1 uppercase tracking-tighter">System_Traffic_Live</p>
+        <p className="text-[8px] font-mono text-gray-600 mt-1 uppercase tracking-tighter">Verified_Visitors_Sync</p>
       </div>
 
       {/* Main Content */}
